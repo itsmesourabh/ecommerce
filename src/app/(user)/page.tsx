@@ -1,12 +1,21 @@
-import React from 'react'
-import Banner from '@/components/Banner'
+import Banner from "@/components/Banner";
+import { client } from "@/lib/sanityClient";
+import { groq } from "next-sanity";
 
-const Homepage = () => {
-  return (
-    <div>
-      <Banner/>
-    </div>
-  )
-}
+const bannerQuery = groq`*[_type == 'banner']{
+  image,
+  _id
+} | order(_createdAt asc)`;
 
-export default Homepage
+const Homepage = async () => {
+    const banners = await client.fetch(bannerQuery);
+    console.log(banners);
+
+    return (
+        <main className="text-sm overflow-hidden min-h-screen">
+            <Banner banners={banners} />
+        </main>
+    );
+};
+
+export default Homepage;

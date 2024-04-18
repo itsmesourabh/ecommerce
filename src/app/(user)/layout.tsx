@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "../../styles/globals.css";
+import "slick-carousel/slick/slick.css";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-    title: "LOGONs Shopping Store || Best place to shop",
+    title: "LOGONs Shopping Store",
     description: "Your trusted online shopping store",
 };
 
