@@ -12,7 +12,7 @@ import {
   decreaseQuantity,
   deleteProduct,
   increaseQuantity,
-} from "@/redux/orebiSlice";
+} from "@/redux/logonsSlice";
 
 interface Props {
   item: ProductProps;
